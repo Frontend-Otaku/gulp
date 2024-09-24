@@ -13,4 +13,9 @@ export const path = {
 		src: `${srcFolder}/assets/**/*.*`,
 		dist: `${distFolder}/assets/`,
 	},
+	html: {
+		src: `${srcFolder}/html/pages/*.html`,
+		watch: `${srcFolder}/html/**/*.html`,
+		dist: `${distFolder}`,
+	},
 };
