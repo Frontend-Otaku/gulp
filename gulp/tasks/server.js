@@ -15,6 +15,8 @@ export const startServer = done => {
 	done();
 };
 
-export const reload = () => {
+export const reload = done => {
 	server.reload();
+
+	done();
 };

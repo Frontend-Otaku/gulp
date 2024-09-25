@@ -6,13 +6,19 @@ import { clean } from "./gulp/tasks/clean.js";
 import { startServer } from "./gulp/tasks/server.js";
 import { watchFiles } from "./gulp/tasks/watch.js";
 import { processHtml } from "./gulp/tasks/html.js";
+import { processStyles } from "./gulp/tasks/styles.js";
 
 dotenv.config();
 
 export const isProduction = process.env.NODE_ENV === "production";
 
-const dev = series(clean, parallel(copy, processHtml), startServer, watchFiles);
-const build = series(clean, parallel(copy, processHtml));
+const dev = series(
+	clean,
+	parallel(copy, processHtml, processStyles),
+	startServer,
+	watchFiles
+);
+const build = series(clean, parallel(copy, processHtml, processStyles));
 
 export { dev, build };
 

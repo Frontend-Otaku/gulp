@@ -1,3 +1,4 @@
+import { src } from "gulp";
 import { resolve } from "path";
 
 // Основные пути
@@ -17,5 +18,10 @@ export const path = {
 		src: `${srcFolder}/html/pages/*.html`,
 		watch: `${srcFolder}/html/**/*.html`,
 		dist: `${distFolder}`,
+	},
+	scss: {
+		src: `${srcFolder}/scss/main.scss`,
+		watch: `${srcFolder}/scss/**/*.scss`,
+		dist: `${distFolder}/css/`,
 	},
 };
